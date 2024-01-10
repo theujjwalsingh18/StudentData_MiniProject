@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Portal</title>
+  <style>
+.frame {
+    width: 90%;
+    margin: 40px auto;
+    text-align: center;
+  }
+.centered-div {
+          width: 500px;
+          height: 430px;
+          background-color: rgba(255, 255, 255, 0.5);
+          backdrop-filter: blur(30px);
+          position: absolute;
+          top: 50%; 
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-align: left;
+          border-radius: 50px;
+      }
+.center-element {
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    border: none;
+    box-shadow: none;
+    width: 130px;
+    height: 40px;
+    line-height: 42px;
+    -webkit-perspective: 230px;
+    perspective: 230px;
+    }
+.form {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1 rem;
+}
+
+label {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: .5rem;
+}
+
+@media only screen and (min-width: 600px) {
+  label {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+input,textarea {
+  width: 100%;
+  margin-top: .25rem;
+  padding: .5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  outline: none;
+  border: 1px solid #7f7f7f;
+  border-radius: .25rem;
+  color: #333;
+  transition: border .25s ease-in-out;
+}
+
+input:hover,textarea,input:focus,textarea:focus {
+  border: 1px solid #17d126;
+}
+
+@media only screen and (min-width: 600px) {
+  input,textarea{
+    width: 60%;
+    margin-top: 0px;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (min-width: 980px) {
+  input,textarea{
+    width: 80%;
+    font-size: 1.25rem;
+  }
+}
+body{
+  background-image:url(img3i.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  
+}
+.centered-div,title{
+  text-align: center;
+}
+input[type="text"]{
+  width: 360px;
+}
+select{
+  width: 380px;
+  height: 50px;
+}
+  </style>
+</head>
+<body>
+
+    <div class="centered-div">
+      <h2 class="title">Student Information</h2>
+
+      <form class="form" action="register" method="post">
+          <label for="name">Name:</label>
+          <input type="text" class="cname" name="name"><br><br>
+          <label for="rollnumber">Roll Number:</label>
+          <input type="text" class="crollnumber" name="rollnumber"><br><br>
+          <label for="courses">Select Course:</label>
+          <select id="courses" class="courses" name="courses">
+              <option value="bcasem1a">BCA Sem 1(A)</option>
+              <option value="bcasem1b">BCA Sem 1(B)</option>
+              <option value="bcasem2a">BCA Sem 2(A)</option>
+              <option value="bcasem2b">BCA Sem 2(B)</option>
+              <option value="bcasem3a">BCA Sem 3(A)</option>
+              <option value="bcasem3b">BCA Sem 3(B)</option>
+              <option value="bcasem4a">BCA Sem 4(A)</option>
+              <option value="bcasem4b">BCA Sem 4(B)</option>
+              <option value="bcasem5a">BCA Sem 5(A)</option>
+              <option value="bcasem5b">BCA Sem 5(B)</option>
+              <option value="bcasem6a">BCA Sem 6(A)</option>
+              <option value="bcasem6b">BCA Sem 6(B)</option>
+          </select><br><br>
+      <!-- <label class="label">
+      <!-- <button class="submitbtn" type="submit"><span>Upload</span></button>
+      <button class="resetbtn" type="reset"><span>Clear</span></button>
+      </label>   -->
+    </form> 
+        </div>
+    </body>
+</html>
