@@ -13,7 +13,8 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet("/register")
 public class RegisterServlet extends HttpServlet{
-	private static final String INSERT_QUERY = "INSERT INTO USER(NAME,REG,COURSES) VALUES(?,?,?)";
+	private static final long serialVersionUID = 1L;
+	String ujjwal = "INSERT INTO USER(NAME,REG,COURSES) VALUES(?,?,?)";
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
 		//PrintWriter
@@ -22,16 +23,14 @@ public class RegisterServlet extends HttpServlet{
 		String name = req.getParameter("name");
 		String reg = req.getParameter("rollnumber");
 		String courses = req.getParameter("courses");
-		// load jdbc driver
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		try(Connection con = DriverManager.getConnection("jdbc:mysql:///firstdb","root","root");
-				PreparedStatement ps = con.prepareStatement(INSERT_QUERY);)
+				PreparedStatement ps = con.prepareStatement(ujjwal);)
 		{
 			// set the values 
 			ps.setString(1, name);
@@ -44,7 +43,7 @@ public class RegisterServlet extends HttpServlet{
 					pw.println("Record not stored into database");
 			}else
 			{
-				pw.println("Record Stored into Database");
+				pw.println("<div width:200px; margin:0 auto; background-color:lightgray;><h1>Data Stored into Database</h1></div>");
 			}
 		}catch(SQLException se) {
 			pw.println(se.getMessage());
