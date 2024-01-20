@@ -17,7 +17,6 @@ public class RegisterServlet extends HttpServlet{
 	String ujjwal = "INSERT INTO USER(NAME,REG,COURSES) VALUES(?,?,?)";
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
-		//PrintWriter
 		PrintWriter pw = res.getWriter();
 		res.setContentType("text/html");
 		String name = req.getParameter("name");
@@ -43,7 +42,7 @@ public class RegisterServlet extends HttpServlet{
 					pw.println("Record not stored into database");
 			}else
 			{
-				pw.println("<div width:200px; margin:0 auto; background-color:lightgray;><h1>Data Stored into Database</h1></div>");
+					res.sendRedirect("success.html");
 			}
 		}catch(SQLException se) {
 			pw.println(se.getMessage());
