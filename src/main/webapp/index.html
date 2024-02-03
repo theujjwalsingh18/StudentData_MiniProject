@@ -10,7 +10,7 @@
   <div class="centered-div">
     <h2 class="title">Student Information</h2>
     <form id="myForm" class="form" action="register" method="post">
-      <label for="name">Name:</label>
+      <label for="name">Name :</label>
       <input type="text" class="cname" name="name"><br><br>
       <label for="rollnumber">Roll Number:</label>
       <input type="number" class="crollnumber" name="rollnumber"><br><br>
@@ -30,10 +30,10 @@
         <option value="bcasem6a">BCA Sem 6(A)</option>
         <option value="bcasem6b">BCA Sem 6(B)</option>
       </select><br>
-      <label class="label">
-        <button id = "myButton" class="btn btn-send center-element"type="submit"><span>Uploaded</span><span>Upload</span></button>
-        <button class="btn btn-send center-element" type="reset"><span>Cleared</span><span>Clear</span></button>
-      </label>
+      <div class="button-container">
+        <button id = "myButton" class="btn-submit"type="submit">Upload</button>
+        <button id="myClear" class="btn-reset" type="reset">Clear</button>
+      </div>
     </form>
   </div>
 </body>
